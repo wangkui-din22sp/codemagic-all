@@ -8,7 +8,7 @@ workflows:
       android_signing:
         - codemagic
       groups:
-        - google_play
+        - google_creditials
       vars:
         PACKAGE_NAME: "io.codemagic.androidquicksample"
     scripts:
