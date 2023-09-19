@@ -36,7 +36,7 @@ workflows:
         notify:
           success: true
           failure: false
-      google_cloud:
+      google_play:
         credentials: $GCLOUD_STORAGE_KEY
         track: internal
         submit_as_draft: true
