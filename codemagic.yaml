@@ -30,12 +30,15 @@ workflows:
       - android/app/build/outputs/apk/**/*.apk
       - android/app/build/outputs/**/*.aab
     publishing:
-      scripts:
-        -   name: Publish to Google Cloud
-            script: | 
-              echo $GCLOUD_STORAGE_KEY > $CM_BUILD_DIR/gcloud_storage_key.json
-              gcloud auth activate-service-account --key-file $CM_BUILD_DIR/gcloud_storage_key.json
-              gsutil cp $CM_BUILD_DIR/app/build/outputs/**/*.apk gs://codemagic777
+      email:
+        recipients:
+          - wyatt1115@gmail.com
+        notify:
+          success: true
+          failure: false
+      google_play:
+        credentials: $GCLOUD_STORAGE_KEY
+        track: alpha
       
 
 
