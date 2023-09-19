@@ -36,16 +36,10 @@ workflows:
         notify:
           success: true
           failure: false
-      google_play:
+      google_credentials:
         credentials: $GCLOUD_STORAGE_KEY
         track: internal
         submit_as_draft: true
-      scripts:
-        - name: Publish to Google Cloud
-          script: | 
-            echo $GCLOUD_STORAGE_KEY > $CM_BUILD_DIR/gcloud_storage_key.json
-            gcloud auth activate-service-account --key-file $CM_BUILD_DIR/gcloud_storage_key.json
-            ls -la $CM_BUILD_DIR/app/build/outputs/
-            gsutil cp $CM_BUILD_DIR/app/build/outputs/**/*.apk gs://YOUR_BUCKET_NAME
+      
 
 
