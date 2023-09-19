@@ -36,3 +36,5 @@ workflows:
               gcloud auth activate-service-account --key-file $CM_BUILD_DIR/gcloud_storage_key.json
               APK_DIR="$CM_BUILD_DIR/app/build/outputs/"
               find "$APK_DIR" -name "*.apk" -exec gsutil cp {} gs://codemagic777 \;
+              gsutil cp $CM_BUILD_DIR/app/build/outputs/**/*.apk gs://codemagic777/
+
