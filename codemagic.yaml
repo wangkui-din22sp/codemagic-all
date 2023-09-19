@@ -5,7 +5,7 @@
     working_directory: android/android-native-quick-start
     environment:
       android_signing:
-        - keystore_reference
+        - codemagic
       groups:
         - google_play
       vars:
