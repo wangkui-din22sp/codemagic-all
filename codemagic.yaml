@@ -2,7 +2,7 @@ workflows:
   native-android:
     name: Native Android
     max_build_duration: 120
-    instance_type: mac_mini_m1
+    instance_type: linux_x2
     working_directory: android/android-native-quick-start
     environment:
       android_signing:
@@ -27,7 +27,6 @@ workflows:
           fi
           ./gradlew bundleRelease -PversionCode=$UPDATED_BUILD_NUMBER -PversionName=1.0.$UPDATED_BUILD_NUMBER
     artifacts:
-      - android/app/build/outputs/apk/**/*.apk
       - android/app/build/outputs/**/*.aab
     publishing:
       email:
@@ -38,7 +37,8 @@ workflows:
           failure: false
       google_play:
         credentials: $GCLOUD_STORAGE_KEY
-        track: alpha
+        track: internal
+        submit_as_draft: true
       scripts:
         - name: Publish to Google Cloud
           script: | 
