@@ -2,7 +2,7 @@ workflows:
   native-android:
     name: Native Android
     max_build_duration: 120
-    instance_type: linux_x2
+    instance_type: mac_mini_m1
     working_directory: android/android-native-quick-start
     environment:
       android_signing:
