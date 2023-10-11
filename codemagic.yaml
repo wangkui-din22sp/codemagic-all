@@ -34,11 +34,7 @@ workflows:
           - wyatt1115@gmail.com
         notify:
           success: true
-          failure: false
-      google_play:
-        credentials: $GCLOUD_STORAGE_KEY
-        track: internal
-        submit_as_draft: true
+          failure: true
       scripts:
         - name: Publish to Google Cloud
           script: | 
