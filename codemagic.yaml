@@ -40,7 +40,7 @@ workflows:
           script: | 
             echo $GCLOUD_STORAGE_KEY > $CM_BUILD_DIR/gcloud_storage_key.json
             gcloud auth activate-service-account --key-file $CM_BUILD_DIR/gcloud_storage_key.json
-            gsutil cp $CM_BUILD_DIR/app/build/outputs/**/*.aab gs://codemagic777 
+            gsutil cp $CM_BUILD_DIR/app/build/outputs/**/app-release.aab gs://codemagic777 
       
 
 
