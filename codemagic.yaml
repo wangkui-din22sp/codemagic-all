@@ -38,9 +38,9 @@ workflows:
       scripts:
         - name: Check AAB File Existence
           script: |
-            ls -l $CM_BUILD_DIR/app/build/outputs/**/*.aab
-            echo "Contents of app/build/outputs directory"
-            ls -l $CM_BUILD_DIR/app/build/outputs/
+            ls -l $CM_BUILD_DIR/
+            echo "Contents of the directory"
+            ls -l $CM_BUILD_DIR/
         - name: Publish to Google Cloud
           script: | 
             echo $GCLOUD_STORAGE_KEY > $CM_BUILD_DIR/gcloud_storage_key.json
