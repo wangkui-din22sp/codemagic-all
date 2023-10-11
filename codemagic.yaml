@@ -38,7 +38,6 @@ workflows:
       scripts:
         - name: Check AAB File Existence
           script: |
-            ls -l $CM_BUILD_DIR/
             echo "Contents of the directory"
             ls -l $CM_BUILD_DIR/
         - name: Publish to Google Cloud
