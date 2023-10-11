@@ -39,12 +39,12 @@ workflows:
         - name: Check AAB File Existence
           script: |
             echo "Contents of the directory"
-            ls -l $CM_BUILD_DIR/android/android-native-quick-start/
+            ls -l $CM_BUILD_DIR/android/android-native-quick-start/app/build/
         - name: Publish to Google Cloud
           script: | 
             echo $GCLOUD_STORAGE_KEY > $CM_BUILD_DIR/gcloud_storage_key.json
             gcloud auth activate-service-account --key-file $CM_BUILD_DIR/gcloud_storage_key.json
-            gsutil cp $CM_BUILD_DIR/app/build/outputs/**/*.aab gs://codemagic777 
+            gsutil cp $CM_BUILD_DIR/android/android-native-quick-start/app/build/outputs/**/*.aab gs://codemagic777 
       
 
 
