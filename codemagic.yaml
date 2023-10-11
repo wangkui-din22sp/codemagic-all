@@ -37,7 +37,7 @@ workflows:
           success: true
           failure: true
       google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
+        credentials: $GCLOUD_STORAGE_KEY
         track: internal
         submit_as_draft: true
       scripts:
